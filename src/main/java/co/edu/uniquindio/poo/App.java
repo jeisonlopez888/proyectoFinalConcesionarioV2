@@ -48,6 +48,7 @@ public class App {
         vehiculo1.nuevo ="si";
         vehiculo1.tipoTransmision = "Automatica";
         vehiculo1.tipoCombustible = "Gasolina";
+        vehiculo1.toString();
 
         Vehiculo vehiculo2 = new Moto();
         vehiculo2.marca = "yamaha";
@@ -104,7 +105,7 @@ public class App {
         vehiculo7.modelo= "sprinter";
         vehiculo7.cilindraje = "2950 cc";
         vehiculo7.cambios ="6";
-        vehiculo7.velocidadMaxima = "350 km/h";
+        vehiculo7.velocidadMaxima = "110 km/h";
         vehiculo7.nuevo = "nuevo";
         vehiculo7.tipoTransmision = "automatica";
         vehiculo7.tipoCombustible = "gasolina ";
@@ -133,12 +134,22 @@ public class App {
     
        // Realización de transacciones
        tuCarroUQ.realizarVenta(vehiculo1, cliente1, empleado1);
-       tuCarroUQ.realizarCompra(vehiculo2, cliente3, empleado3);
-       tuCarroUQ.realizarAlquiler(vehiculo3, cliente1, empleado1);
+       tuCarroUQ.realizarCompra(vehiculo2, cliente2, empleado3);
+       tuCarroUQ.realizarAlquiler(vehiculo3, cliente3, empleado1);
+       tuCarroUQ.realizarAlquiler(vehiculo4, cliente1, empleado3);
+       tuCarroUQ.realizarCompra(vehiculo5, cliente2, empleado2);
+       tuCarroUQ.realizarVenta(vehiculo6, cliente3, empleado3);
+       tuCarroUQ.realizarCompra(vehiculo7, cliente1, empleado3);
+       tuCarroUQ.realizarAlquiler(vehiculo8, cliente2, empleado1);
 
 
         // Generar reportes
      
+        tuCarroUQ.generarReportes();
+        tuCarroUQ.generarReportes();
+        tuCarroUQ.generarReportes();
+        tuCarroUQ.generarReportes();
+        tuCarroUQ.generarReportes();
         tuCarroUQ.generarReportes();
         tuCarroUQ.generarReportes();
         tuCarroUQ.generarReportes();
