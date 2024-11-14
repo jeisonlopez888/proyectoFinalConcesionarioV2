@@ -3,8 +3,8 @@ package co.edu.uniquindio.poo;
 
 
 public class VehiculoElectrico extends Vehiculo {
-    int autonomiaCargaCompleta;
-    int tiempoCarga;
+    public int autonomiaCargaCompleta;
+    public int tiempoCarga;
 
     @Override
     public String toString() { 

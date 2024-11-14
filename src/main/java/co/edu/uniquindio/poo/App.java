@@ -42,7 +42,7 @@ public class App {
         Vehiculo vehiculo1 = new Sedan();
         vehiculo1.marca = "Toyota";
         vehiculo1.modelo = "Corolla";
-        vehiculo1.cilindraje = "1600";
+        vehiculo1.cilindraje = "1600 cc";
         vehiculo1.cambios = "5";
         vehiculo1.velocidadMaxima = "170 km/h";
         vehiculo1.nuevo ="si";
@@ -62,7 +62,7 @@ public class App {
         Vehiculo vehiculo3 = new Deportivo();
         vehiculo3.marca = "lamborgini";
         vehiculo3.modelo= "egoista";
-        vehiculo3.cilindraje = "5200";
+        vehiculo3.cilindraje = "5200 cc";
         vehiculo3.cambios ="6";
         vehiculo3.velocidadMaxima = "350 km/h";
         vehiculo3.nuevo = "usado";
@@ -72,7 +72,7 @@ public class App {
         Vehiculo vehiculo4 = new Camioneta();
         vehiculo4.marca = "Mazda";
         vehiculo4.modelo= "Cx-30";
-        vehiculo4.cilindraje = "2500";
+        vehiculo4.cilindraje = "2500 cc";
         vehiculo4.cambios ="6";
         vehiculo4.velocidadMaxima = "210 km/h";
         vehiculo4.nuevo = "usado";
@@ -82,7 +82,7 @@ public class App {
         Vehiculo vehiculo5 = new PickUp();
         vehiculo5.marca = "toyota";
         vehiculo5.modelo= "hilux";
-        vehiculo5.cilindraje = "2400";
+        vehiculo5.cilindraje = "2400 cc";
         vehiculo5.cambios ="6";
         vehiculo5.velocidadMaxima = "180 km/h";
         vehiculo5.nuevo = "nuevo";
@@ -90,20 +90,45 @@ public class App {
         vehiculo5.tipoCombustible = "diesel";
 
         Vehiculo vehiculo6 = new Van();
-        vehiculo6.marca = "lamborgini";
-        vehiculo6.modelo= "egoista";
-        vehiculo6.cilindraje = "5200";
+        vehiculo6.marca = "toyota";
+        vehiculo6.modelo= "hiace";
+        vehiculo6.cilindraje = "2750 cc";
         vehiculo6.cambios ="6";
-        vehiculo6.velocidadMaxima = "350 km/h";
+        vehiculo6.velocidadMaxima = "190 km/h";
         vehiculo6.nuevo = "usado";
         vehiculo6.tipoTransmision = "automatica";
-        vehiculo6.tipoCombustible = "gasolina alto";
+        vehiculo6.tipoCombustible = "gasolina ";
+
+        Vehiculo vehiculo7 = new Bus();
+        vehiculo7.marca = "mercedez benz";
+        vehiculo7.modelo= "sprinter";
+        vehiculo7.cilindraje = "2950 cc";
+        vehiculo7.cambios ="6";
+        vehiculo7.velocidadMaxima = "350 km/h";
+        vehiculo7.nuevo = "nuevo";
+        vehiculo7.tipoTransmision = "automatica";
+        vehiculo7.tipoCombustible = "gasolina ";
+
+        Vehiculo vehiculo8 = new Camion();
+        vehiculo2.marca = "mercedez benz ";
+        vehiculo2.modelo= "actros";
+        vehiculo2.cilindraje = "12880";
+        vehiculo2.cambios ="12";
+        vehiculo2.velocidadMaxima = "90 km/h";
+        vehiculo2.nuevo = "nuevo";
+        vehiculo2.tipoTransmision = "automatica";
+        vehiculo2.tipoCombustible = "gasolina alto";
 
         // Registro de cliente y vehículo
         tuCarroUQ.registrarCliente(cliente1);
         tuCarroUQ.registrarVehiculo(vehiculo1);
         tuCarroUQ.registrarVehiculo(vehiculo2);
         tuCarroUQ.registrarVehiculo(vehiculo3);
+        tuCarroUQ.registrarVehiculo(vehiculo4);
+        tuCarroUQ.registrarVehiculo(vehiculo5);
+        tuCarroUQ.registrarVehiculo(vehiculo6);
+        tuCarroUQ.registrarVehiculo(vehiculo7);
+        tuCarroUQ.registrarVehiculo(vehiculo8);
 
     
        // Realización de transacciones

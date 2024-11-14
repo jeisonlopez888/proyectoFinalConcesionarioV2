@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCliente, ITransacciones, IRegistroAdministrador {
+public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCliente, ITransacciones {
     private List<Vehiculo> vehiculos = new LinkedList<>();
     private List<Cliente> clientes = new LinkedList<>();
     private List<Transaccion> transacciones = new LinkedList<>();

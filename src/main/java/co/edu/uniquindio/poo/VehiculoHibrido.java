@@ -2,8 +2,8 @@ package co.edu.uniquindio.poo;
 
 
 public class VehiculoHibrido extends Vehiculo {
-    boolean enchufable;
-    boolean hibridoLigero;
+    public boolean enchufable;
+    public boolean hibridoLigero;
 
     @Override
     public String toString() { 
