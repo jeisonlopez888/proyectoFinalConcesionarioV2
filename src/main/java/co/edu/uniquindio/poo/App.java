@@ -5,8 +5,6 @@ package co.edu.uniquindio.poo;
 public class App {
     public static void main(String[] args) {
         TuCarroUQ tuCarroUQ = new TuCarroUQ();
-        Administrador administrador = new Administrador();
-        empleados.add(admin);
 
         Empleado empleado1 = new Empleado();
         empleado1.nombre ="moises vargas";
