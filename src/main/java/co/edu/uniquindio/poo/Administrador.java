@@ -20,4 +20,5 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
         empleados.add(empleado);
         System.out.println("Empleado gestionado: " + empleado);
     }
+
 } 

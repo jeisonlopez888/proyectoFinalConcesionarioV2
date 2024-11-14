@@ -59,15 +59,45 @@ public class App {
         vehiculo2.tipoTransmision = "mecánica";
         vehiculo2.tipoCombustible = "gasolina";
 
-        Vehiculo vehiculo3 = new Depotivo();
-        vehiculo2.marca = "lamborgini";
-        vehiculo2.modelo= "egoista";
-        vehiculo2.cilindraje = "5200";
-        vehiculo2.cambios ="6";
-        vehiculo2.velocidadMaxima = "350 km/h";
-        vehiculo2.nuevo = "usado";
-        vehiculo2.tipoTransmision = "automatica";
-        vehiculo2.tipoCombustible = "gasolina alto";
+        Vehiculo vehiculo3 = new Deportivo();
+        vehiculo3.marca = "lamborgini";
+        vehiculo3.modelo= "egoista";
+        vehiculo3.cilindraje = "5200";
+        vehiculo3.cambios ="6";
+        vehiculo3.velocidadMaxima = "350 km/h";
+        vehiculo3.nuevo = "usado";
+        vehiculo3.tipoTransmision = "automatica";
+        vehiculo3.tipoCombustible = "gasolina alto";
+
+        Vehiculo vehiculo4 = new Camioneta();
+        vehiculo4.marca = "Mazda";
+        vehiculo4.modelo= "Cx-30";
+        vehiculo4.cilindraje = "2500";
+        vehiculo4.cambios ="6";
+        vehiculo4.velocidadMaxima = "210 km/h";
+        vehiculo4.nuevo = "usado";
+        vehiculo4.tipoTransmision = "automatica";
+        vehiculo4.tipoCombustible = "gasolina";
+
+        Vehiculo vehiculo5 = new PickUp();
+        vehiculo5.marca = "toyota";
+        vehiculo5.modelo= "hilux";
+        vehiculo5.cilindraje = "2400";
+        vehiculo5.cambios ="6";
+        vehiculo5.velocidadMaxima = "180 km/h";
+        vehiculo5.nuevo = "nuevo";
+        vehiculo5.tipoTransmision = "mecánica";
+        vehiculo5.tipoCombustible = "diesel";
+
+        Vehiculo vehiculo6 = new Van();
+        vehiculo6.marca = "lamborgini";
+        vehiculo6.modelo= "egoista";
+        vehiculo6.cilindraje = "5200";
+        vehiculo6.cambios ="6";
+        vehiculo6.velocidadMaxima = "350 km/h";
+        vehiculo6.nuevo = "usado";
+        vehiculo6.tipoTransmision = "automatica";
+        vehiculo6.tipoCombustible = "gasolina alto";
 
         // Registro de cliente y vehículo
         tuCarroUQ.registrarCliente(cliente1);

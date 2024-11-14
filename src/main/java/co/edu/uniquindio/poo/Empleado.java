@@ -3,10 +3,11 @@ package co.edu.uniquindio.poo;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCliente, ITransacciones {
+public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCliente, ITransacciones, IRegistroAdministrador {
     private List<Vehiculo> vehiculos = new LinkedList<>();
     private List<Cliente> clientes = new LinkedList<>();
     private List<Transaccion> transacciones = new LinkedList<>();
+   
 
     @Override
     public void registrarVehiculo(Vehiculo vehiculo) {
@@ -37,4 +38,5 @@ public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCli
         transacciones.add(new Transaccion(this, cliente, vehiculo, "compra"));
         System.out.println("Compra realizada para: " + cliente);
     }
-} 
+
+}
