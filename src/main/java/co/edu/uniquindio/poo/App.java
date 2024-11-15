@@ -111,14 +111,35 @@ public class App {
         vehiculo7.tipoCombustible = "gasolina ";
 
         Vehiculo vehiculo8 = new Camion();
-        vehiculo2.marca = "mercedez benz ";
-        vehiculo2.modelo= "actros";
-        vehiculo2.cilindraje = "12880";
-        vehiculo2.cambios ="12";
-        vehiculo2.velocidadMaxima = "90 km/h";
-        vehiculo2.nuevo = "nuevo";
-        vehiculo2.tipoTransmision = "automatica";
-        vehiculo2.tipoCombustible = "gasolina alto";
+        vehiculo8.marca = "mercedez benz ";
+        vehiculo8.modelo= "actros";
+        vehiculo8.cilindraje = "12880";
+        vehiculo8.cambios ="12";
+        vehiculo8.velocidadMaxima = "90 km/h";
+        vehiculo8.nuevo = "nuevo";
+        vehiculo8.tipoTransmision = "automatica";
+        vehiculo8.tipoCombustible = "gasolina alto";
+
+        Vehiculo vehiculo9 = new VehiculoElectrico();
+        vehiculo9.marca = " Tesla ";
+        vehiculo9.modelo= " 3 Standard Range Plus";
+        vehiculo9.cilindraje = " no por que no es de motor a combustion";
+        vehiculo9.cambios ="1";
+        vehiculo9.velocidadMaxima = "225 km/h";
+        vehiculo9.nuevo = "nuevo";
+        vehiculo9.tipoTransmision = "automatica";
+        vehiculo9.tipoCombustible = "electrico 100%";
+
+        Vehiculo vehiculo10 = new VehiculoHibrido();
+        vehiculo10.marca = " Toyota ";
+        vehiculo10.modelo= " Prius 2023";
+        vehiculo10.cilindraje = " 1.8 L";
+        vehiculo10.cambios ="1";
+        vehiculo10.velocidadMaxima = "180 km/h";
+        vehiculo10.nuevo = "Usado";
+        vehiculo10.tipoTransmision = "automatica";
+        vehiculo10.tipoCombustible = "Hibrido (gasolina y electrico)";
+
 
         // Registro de cliente y vehículo
         tuCarroUQ.registrarCliente(cliente1);
@@ -130,6 +151,10 @@ public class App {
         tuCarroUQ.registrarVehiculo(vehiculo6);
         tuCarroUQ.registrarVehiculo(vehiculo7);
         tuCarroUQ.registrarVehiculo(vehiculo8);
+        tuCarroUQ.registrarVehiculo(vehiculo9);
+        tuCarroUQ.registrarVehiculo(vehiculo10);
+
+    
 
     
        // Realización de transacciones
