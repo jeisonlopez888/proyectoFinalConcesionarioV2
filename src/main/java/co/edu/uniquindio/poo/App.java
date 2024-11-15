@@ -166,10 +166,15 @@ public class App {
        tuCarroUQ.realizarVenta(vehiculo6, cliente3, empleado3);
        tuCarroUQ.realizarCompra(vehiculo7, cliente1, empleado3);
        tuCarroUQ.realizarAlquiler(vehiculo8, cliente2, empleado1);
+       tuCarroUQ.realizarCompra(vehiculo9, cliente3, empleado3);
+       tuCarroUQ.realizarVenta(vehiculo10, cliente1, empleado2);
+
 
 
         // Generar reportes
-     
+        tuCarroUQ.generarReportes();
+        tuCarroUQ.generarReportes();
+        tuCarroUQ.generarReportes();
         tuCarroUQ.generarReportes();
         tuCarroUQ.generarReportes();
         tuCarroUQ.generarReportes();
