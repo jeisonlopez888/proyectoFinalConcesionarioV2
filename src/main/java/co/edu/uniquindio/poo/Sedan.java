@@ -15,11 +15,11 @@ public class Sedan extends Vehiculo {
     
     @Override
     public String toString() {
-        return " Sedan \n numPasajeros=" + "2" + ", \n numPuertas=" + "4" + ", \n capacidadMaletero="
-                + "35 litros" + ", \n aireAcondicionado=" + "si" + ", \n camaraReversa=" + "si"
-                + ", \n velocidadCrucero=" + "no" + ", \n numBolsasAire=" + "6" + ", \n ABS=" + "no"
-                + ", \n sensoresColision=" + "no" + ", \n sensorTraficoCruzado=" + "no"
-                + ", \n asistentePermanenciaCarril=" + "no" ;
+        return " Sedan \n numPasajeros = " + "2" + ", \n numPuertas = " + "4" + ", \n capacidadMaletero = "
+                + "35 litros" + ", \n aireAcondicionado = " + "si" + ", \n camaraReversa = " + "si"
+                + ", \n velocidadCrucero = " + "no" + ", \n numBolsasAire = " + "6" + ", \n ABS = " + "no"
+                + ", \n sensoresColision = " + "no" + ", \n sensorTraficoCruzado = " + "no"
+                + ", \n asistentePermanenciaCarril = " + "no" ;
     }
 
    

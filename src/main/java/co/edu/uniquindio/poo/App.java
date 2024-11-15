@@ -122,7 +122,7 @@ public class App {
 
         Vehiculo vehiculo9 = new VehiculoElectrico();
         vehiculo9.marca = " Tesla ";
-        vehiculo9.modelo= " 3 Standard Range Plus";
+        vehiculo9.modelo = " 3 Standard Range Plus";
         vehiculo9.cilindraje = " no por que no es de motor a combustion";
         vehiculo9.cambios ="1";
         vehiculo9.velocidadMaxima = "225 km/h";
@@ -132,13 +132,13 @@ public class App {
 
         Vehiculo vehiculo10 = new VehiculoHibrido();
         vehiculo10.marca = " Toyota ";
-        vehiculo10.modelo= " Prius 2023";
+        vehiculo10.modelo = " Prius 2023";
         vehiculo10.cilindraje = " 1.8 L";
-        vehiculo10.cambios ="1";
-        vehiculo10.velocidadMaxima = "180 km/h";
-        vehiculo10.nuevo = "Usado";
-        vehiculo10.tipoTransmision = "automatica";
-        vehiculo10.tipoCombustible = "Hibrido (gasolina y electrico)";
+        vehiculo10.cambios =" 1";
+        vehiculo10.velocidadMaxima = " 180 km/h";
+        vehiculo10.nuevo = " Usado";
+        vehiculo10.tipoTransmision = " automatica";
+        vehiculo10.tipoCombustible = " Hibrido (gasolina y electrico)";
 
 
         // Registro de cliente y vehículo

@@ -8,8 +8,8 @@ public class Deportivo extends Vehiculo {
     private String tiempoVelMax;
     @Override
     public String toString() {
-        return "Deportivo \n numPasajeros=" + numPasajeros + ", \n numPuertas=" + numPuertas + ", \n numBolsasAire="
-                + numBolsasAire + ", \n numCaballosFuerza=" + numCaballosFuerza + ", \n tiempoVelMax=" + tiempoVelMax ;
+        return "Deportivo \n numPasajeros = " + numPasajeros + ", \n numPuertas = " + numPuertas + ", \n numBolsasAire = "
+                + numBolsasAire + ", \n numCaballosFuerza = " + numCaballosFuerza + ", \n tiempoVelMax = " + tiempoVelMax ;
     }
     
     

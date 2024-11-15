@@ -13,9 +13,9 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo " + "\n marca='" + marca + '\'' + ", \n nuevo=" + nuevo +
-                ", \n modelo='" + modelo + '\'' + ", \n cambios=" + cambios +
-                ", \n velocidadMaxima=" + velocidadMaxima + ", \n cilindraje=" + cilindraje +
-                ", \n tipoTransmision='" + tipoTransmision + '\'' + ", \n tipoCombustible='" + tipoCombustible + '\'';
+        return "Vehiculo " + "\n marca = " + marca + '\'' + ", \n nuevo = " + nuevo +
+                ", \n modelo = '" + modelo + '\'' + ", \n cambios = " + cambios +
+                ", \n velocidadMaxima = " + velocidadMaxima + ", \n cilindraje = " + cilindraje +
+                ", \n tipoTransmision = '" + tipoTransmision + '\'' + ", \n tipoCombustible = '" + tipoCombustible + '\'';
     }
 }

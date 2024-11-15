@@ -7,5 +7,5 @@ public class VehiculoHibrido extends Vehiculo {
 
     @Override
     public String toString() { 
-        return "VehiculoHibrido " + super.toString() + ", \n enchufable=" + enchufable + ", \n hibridoLigero=" + hibridoLigero; }
+        return "VehiculoHibrido " + super.toString() + ", \n enchufable = " + " Si " + ", \n hibridoLigero = " + " No "; }
 } 

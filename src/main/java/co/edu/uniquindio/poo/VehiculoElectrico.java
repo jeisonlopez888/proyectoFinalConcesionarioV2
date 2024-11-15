@@ -8,5 +8,5 @@ public class VehiculoElectrico extends Vehiculo {
 
     @Override
     public String toString() { 
-        return "VehiculoElectrico " + super.toString() + ", \n autonomiaCargaCompleta=" + autonomiaCargaCompleta + ", \n tiempoCarga=" + tiempoCarga + '}'; }
+        return "VehiculoElectrico " + super.toString() + ", \n autonomiaCargaCompleta = " + "430 km/h" + ", \n tiempoCarga = " + "8 horas" + '}'; }
 } 
