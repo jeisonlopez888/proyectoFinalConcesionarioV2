@@ -4,7 +4,7 @@ package co.edu.uniquindio.poo;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacciones, IReporte, IAlmacenamiento {
+public abstract class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacciones, IReporte, IAlmacenamiento {
     private List<Empleado> empleados = new LinkedList<>();
     private List<Cliente> clientes = new LinkedList<>();
     private List<Vehiculo> vehiculos = new LinkedList<>();
