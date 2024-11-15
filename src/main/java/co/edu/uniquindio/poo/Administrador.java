@@ -21,4 +21,11 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
         System.out.println("Empleado gestionado: " + empleado);
     }
 
-} 
+    public void validarCredenciales(String correo, String contrasena) throws ExcepcionCredenciales {
+        // Supongamos que las credenciales válidas son "admin@ejemplo.com" y "12345"
+        if (!correo.equals("admin@ejemplo.com") || !contrasena.equals("12345")) {
+            throw new ExcepcionCredenciales("Credenciales inválidas");
+        }
+        System.out.println("Credenciales válidas");
+    }
+}

@@ -6,6 +6,16 @@ public class App {
     public static void main(String[] args) {
         TuCarroUQ tuCarroUQ = new TuCarroUQ();
 
+        Administrador admin = new Administrador();
+
+        // Intentar validar credenciales
+        try {
+            admin.validarCredenciales("usuario@ejemplo.com", "incorrecta"); // Esto lanzará la excepción
+        } catch (ExcepcionCredenciales e) {
+            admin.manejoExcepciones(e); // Manejo de la excepción
+        }
+        
+
         Empleado empleado1 = new Empleado();
         empleado1.nombre ="moises vargas";
         empleado1.correo ="moiso@.com";
