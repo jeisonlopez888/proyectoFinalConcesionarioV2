@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCliente, ITransacciones {
-    private List<Vehiculo> vehiculos = new LinkedList<>();
-    private List<Cliente> clientes = new LinkedList<>();
-    private List<Transaccion> transacciones = new LinkedList<>();
+    protected List<Vehiculo> vehiculos = new LinkedList<>();
+    protected List<Cliente> clientes = new LinkedList<>();
+    protected List<Transaccion> transacciones = new LinkedList<>();
    
 
     @Override

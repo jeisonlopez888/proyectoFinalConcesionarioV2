@@ -1,18 +1,18 @@
 package co.edu.uniquindio.poo;
 
 public class Camioneta extends Vehiculo {
-    private String numPasajeros;
-    private String numPuertas;
-    private String capacidadMaletero;
-    private String aireAcondicionado;
-    private String camaraReversa;
-    private String velocidadCrucero;
-    private String numBolsasAire;
-    private String ABS;
-    private String sensoresColision;
-    private String sensorTraficoCruzado;
-    private String asistentePermanenciaCarril;
-    private String cuatroXCuatro;
+    protected String numPasajeros;
+    protected String numPuertas;
+    protected String capacidadMaletero;
+    protected String aireAcondicionado;
+    protected String camaraReversa;
+    protected String velocidadCrucero;
+    protected String numBolsasAire;
+    protected String ABS;
+    protected String sensoresColision;
+    protected String sensorTraficoCruzado;
+    protected String asistentePermanenciaCarril;
+    protected String cuatroXCuatro;
     
     @Override
     public String toString() {

@@ -1,14 +1,14 @@
 package co.edu.uniquindio.poo;
 
 public class Bus extends Vehiculo{
-    private int numPasajeros;
-    private int numPuertas;
-    private int capacidadMaletero;
-    private boolean aireAcondicionado;
-    private boolean camaraReversa;
-    private int numBolsasAire;
-    private boolean ABS;
-    private int numeroEjes;
+    protected int numPasajeros;
+    protected int numPuertas;
+    protected int capacidadMaletero;
+    protected boolean aireAcondicionado;
+    protected boolean camaraReversa;
+    protected int numBolsasAire;
+    protected boolean ABS;
+    protected int numeroEjes;
     private int salidasEmergencia;
     @Override
     public String toString() {

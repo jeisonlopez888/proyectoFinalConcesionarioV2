@@ -1,11 +1,11 @@
 package co.edu.uniquindio.poo;
 
 public class Deportivo extends Vehiculo {
-    private String numPasajeros;
-    private String numPuertas;
-    private String numBolsasAire;
-    private String numCaballosFuerza;
-    private String tiempoVelMax;
+    protected String numPasajeros;
+    protected String numPuertas;
+    protected String numBolsasAire;
+    protected String numCaballosFuerza;
+    protected String tiempoVelMax;
     @Override
     public String toString() {
         return "Deportivo \n numPasajeros = " + numPasajeros + ", \n numPuertas = " + numPuertas + ", \n numBolsasAire = "

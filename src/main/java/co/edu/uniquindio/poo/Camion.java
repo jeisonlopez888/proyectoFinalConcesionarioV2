@@ -1,12 +1,12 @@
 package co.edu.uniquindio.poo;
 
 public class Camion extends Vehiculo {
-    private int capacidadCarga;
-    private boolean aireAcondicionado;
-    private boolean frenosAire;
-    private boolean ABS;
-    private int numeroEjes;
-    private String tipoCamion;
+    protected int capacidadCarga;
+    protected boolean aireAcondicionado;
+    protected boolean frenosAire;
+    protected boolean ABS;
+    protected int numeroEjes;
+    protected String tipoCamion;
     @Override
     public String toString() {
         return "\n Camion "+ super.toString() +" \n capacidadCarga=" + capacidadCarga + ",\n aireAcondicionado=" + aireAcondicionado + ", \n frenosAire="
