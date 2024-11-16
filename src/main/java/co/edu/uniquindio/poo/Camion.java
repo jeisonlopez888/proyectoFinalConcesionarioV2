@@ -9,8 +9,8 @@ public class Camion extends Vehiculo {
     protected String tipoCamion;
     @Override
     public String toString() {
-        return "\n Camion "+ super.toString() +" \n capacidadCarga=" + capacidadCarga + ",\n aireAcondicionado=" + aireAcondicionado + ", \n frenosAire="
-                + frenosAire + ",\n ABS=" + ABS + ",\n numeroEjes=" + numeroEjes + ",\n tipoCamion=" + tipoCamion ;
+        return "\n\n\n Camion \n capacidadCarga = " + capacidadCarga + ",\n aireAcondicionado = " + aireAcondicionado + ", \n frenosAire = "
+                + frenosAire + ",\n ABS = " + ABS + ",\n numeroEjes = " + numeroEjes + ",\n tipoCamion = " + tipoCamion ;
     }
 
 }

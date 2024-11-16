@@ -16,11 +16,11 @@ public class Camioneta extends Vehiculo {
     
     @Override
     public String toString() {
-        return "Camioneta [numPasajeros=" + numPasajeros + ", numPuertas=" + numPuertas + ", capacidadMaletero="
-                + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa
-                + ", velocidadCrucero=" + velocidadCrucero + ", numBolsasAire=" + numBolsasAire + ", ABS=" + ABS
-                + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
-                + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + ", cuatroXCuatro=" + cuatroXCuatro
+        return "\n Camioneta [numPasajeros = " + numPasajeros + ",\n numPuertas = " + numPuertas + ",\n capacidadMaletero = "
+                + capacidadMaletero + ",\n aireAcondicionado = " + aireAcondicionado + ",\n camaraReversa = " + camaraReversa
+                + ",\n velocidadCrucero = " + velocidadCrucero + ",\n numBolsasAire = " + numBolsasAire + ",\n ABS = " + ABS
+                + ",\n sensoresColision = " + sensoresColision + ",\n sensorTraficoCruzado = " + sensorTraficoCruzado
+                + ",\n asistentePermanenciaCarril = " + asistentePermanenciaCarril + ",\n cuatroXCuatro = " + cuatroXCuatro
                 + "]";
     }
     

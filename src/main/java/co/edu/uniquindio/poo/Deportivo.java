@@ -6,9 +6,10 @@ public class Deportivo extends Vehiculo {
     protected String numBolsasAire;
     protected String numCaballosFuerza;
     protected String tiempoVelMax;
+    
     @Override
     public String toString() {
-        return "Deportivo \n numPasajeros = " + numPasajeros + ", \n numPuertas = " + numPuertas + ", \n numBolsasAire = "
+        return "\n\n\nDeportivo  numPasajeros = " + numPasajeros + ", \n numPuertas = " + numPuertas + ", \n numBolsasAire = "
                 + numBolsasAire + ", \n numCaballosFuerza = " + numCaballosFuerza + ", \n tiempoVelMax = " + tiempoVelMax ;
     }
     

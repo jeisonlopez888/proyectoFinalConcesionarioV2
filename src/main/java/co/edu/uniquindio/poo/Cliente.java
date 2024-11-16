@@ -11,5 +11,5 @@ public class Cliente {
 
     @Override
     public String toString() { 
-        return "Cliente " + "\n nombre='" + nombre + '\'' + ", \n documento='" + documento + '\'' + ", \n telefono='" + telefono + '\'' + ", \n direccion='" + direccion ; }
+        return "Cliente " + "\n nombre = '" + nombre + '\'' + ", \n documento = '" + documento + '\'' + ", \n telefono = '" + telefono + '\'' + ", \n direccion = '" + direccion ; }
 } 

@@ -13,7 +13,7 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "\n\n Vehiculo " + "\n marca = " + marca + '\'' + ", \n nuevo = " + nuevo +
+        return "\n\n Vehiculo " + " marca = " + marca + '\'' + ", \n nuevo = " + nuevo +
                 ", \n modelo = '" + modelo + '\'' + ", \n cambios = " + cambios +
                 ", \n velocidadMaxima = " + velocidadMaxima + ", \n cilindraje = " + cilindraje +
                 ", \n tipoTransmision = '" + tipoTransmision + '\'' + ", \n tipoCombustible = '" + tipoCombustible + '\'';

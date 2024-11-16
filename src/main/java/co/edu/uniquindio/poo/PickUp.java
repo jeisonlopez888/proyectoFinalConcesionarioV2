@@ -11,9 +11,9 @@ public class PickUp extends Vehiculo {
     protected String capacidadCarga;
     @Override
     public String toString() {
-        return "PickUp [numPasajeros=" + numPasajeros + ", numPuertas=" + numPuertas + ", aireAcondicionado="
-                + aireAcondicionado + ", camaraReversa=" + camaraReversa + ", numBolsasAire=" + numBolsasAire + ", ABS="
-                + ABS + ", cuatroxcuatro=" + cuatroXCuatro + ", capacidadCarga=" + capacidadCarga + "]";
+        return "\n\n\n PickUp [numPasajeros = " + numPasajeros + ",\n numPuertas = " + numPuertas + ",\n aireAcondicionado = "
+                + aireAcondicionado + ",\n camaraReversa = " + camaraReversa + ",\n numBolsasAire = " + numBolsasAire + ",\n ABS = "
+                + ABS + ",\n cuatroxcuatro = " + cuatroXCuatro + ",\n capacidadCarga = " + capacidadCarga + "]";
     }
 
     
