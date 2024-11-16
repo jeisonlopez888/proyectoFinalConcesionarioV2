@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Administrador extends Usuario implements IReporte, ISeguridad {
-    private List<Empleado> empleados = new LinkedList<>();
+    protected List<Empleado> empleados = new LinkedList<>();
 
     @Override
     public void generarReportes() {
@@ -19,6 +19,11 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     public void gestionarEmpleado(Empleado empleado) {
         empleados.add(empleado);
         System.out.println("Empleado gestionado: " + empleado);
+    }
+
+    public void bloquearEmpleado(Empleado empleado) {
+            empleados.add(empleado);
+            System.out.println("Empleado bloqueado: " + empleado);
     }
 
     public void validarCredenciales(String correo, String contrasena) throws ExcepcionCredenciales {
