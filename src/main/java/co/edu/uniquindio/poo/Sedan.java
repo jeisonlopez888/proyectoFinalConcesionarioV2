@@ -14,7 +14,7 @@ public class Sedan extends Vehiculo {
     protected String asistentePermanenciaCarril;
     @Override
     public String toString() {
-        return "\n\n\n Sedan [ numPasajeros = " + " 4 " + ",\n numPuertas = " + " 5 " + ",\n capacidadMaletero = "
+        return "\n\n\nSedan " + super.toString() + ", numPasajeros = " + " 4 " + ",\n numPuertas = " + " 5 " + ",\n capacidadMaletero = "
                 + "40 litros" + ",\n aireAcondicionado = " + aireAcondicionado + ",\n camaraReversa = " + camaraReversa
                 + ",\n velocidadCrucero = " + velocidadCrucero + ",\n numBolsasAire = " + numBolsasAire + ",\n ABS = " + ABS
                 + ",\n sensoresColision = " + sensoresColision + ",\n sensorTraficoCruzado = " + sensorTraficoCruzado

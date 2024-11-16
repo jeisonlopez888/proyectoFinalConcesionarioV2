@@ -10,7 +10,7 @@ public class Van extends Vehiculo {
     protected String ABS;
     @Override
     public String toString() {
-        return "\n\n\nVan [numPasajeros = " + numPasajeros + ",\n numPuertas = " + numPuertas + ",\n capacidadMaletero = "
+        return "\n\n\nVan " + super.toString() + ",numPasajeros = " + numPasajeros + ",\n numPuertas = " + numPuertas + ",\n capacidadMaletero = "
                 + capacidadMaletero + ",\n aireAcondicionado = " + aireAcondicionado + ",\n camaraReversa = " + camaraReversa
                 + ",\n numBolsasAire = " + numBolsasAire + ",\n ABS = " + ABS + "]";
     }

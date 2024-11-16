@@ -13,7 +13,7 @@ public class Bus extends Vehiculo{
 
     @Override
     public String toString() {
-        return "\n\n\n Bus \n numPasajeros = " + numPasajeros + ",\n numPuertas = " + numPuertas + ",\n capacidadMaletero = "
+        return "\n\n\nBus " + super.toString() + ",\n numPasajeros = " + numPasajeros + ",\n numPuertas = " + numPuertas + ",\n capacidadMaletero = "
                 + capacidadMaletero + ",\n aireAcondicionado = " + aireAcondicionado + ",\n camaraReversa = " + camaraReversa
                 + ",\n numBolsasAire = " + numBolsasAire + ",\n ABS = " + ABS + ",\n numeroEjes = " + numeroEjes
                 + ",\n salidasEmergencia = " + salidasEmergencia ;
