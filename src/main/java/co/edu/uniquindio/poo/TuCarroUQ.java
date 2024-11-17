@@ -23,18 +23,30 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
     }
 
     public void realizarAlquiler(Vehiculo vehiculo, Cliente cliente, Empleado empleado) {
-        transacciones.add(new Transaccion(empleado, cliente, vehiculo, "alquiler"));
-        System.out.println("Alquiler realizado en TuCarroUQ para: " + cliente);
+        if (vehiculos.contains(vehiculo)) {
+            transacciones.add(new Transaccion(empleado, cliente, vehiculo, "alquiler"));
+            System.out.println("Alquiler realizado en TuCarroUQ para: " + cliente.getNombre());
+        } else {
+            System.out.println("El vehículo no está disponible para alquiler.");
+        }
     }
     
     public void realizarVenta(Vehiculo vehiculo, Cliente cliente, Empleado empleado) {
-        transacciones.add(new Transaccion(empleado, cliente, vehiculo, "venta"));
-        System.out.println("Venta realizada en TuCarroUQ para: " + cliente);
+        if (vehiculos.contains(vehiculo)) {
+            transacciones.add(new Transaccion(empleado, cliente, vehiculo, "venta"));
+            System.out.println("Venta realizada en TuCarroUQ para: " + cliente.getNombre());
+        } else {
+            System.out.println("El vehículo no está disponible para venta.");
+        }
     }
     
     public void realizarCompra(Vehiculo vehiculo, Cliente cliente, Empleado empleado) {
-        transacciones.add(new Transaccion(empleado, cliente, vehiculo, "compra"));
-        System.out.println("Compra realizada en TuCarroUQ para: " + cliente);
+        if (vehiculos.contains(vehiculo)) {
+            transacciones.add(new Transaccion(empleado, cliente, vehiculo, "compra"));
+            System.out.println("Compra realizada en TuCarroUQ para: " + cliente.getNombre());
+        } else {
+            System.out.println("El vehículo no está disponible para compra.");
+        }
     }
     
     @Override
@@ -47,11 +59,18 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
 
     @Override
     public void almacenarDatos() {
+        // Implementar lógica para almacenar datos en un archivo o base de datos
         System.out.println("Datos almacenados.");
     }
 
     @Override
     public void recuperarDatos() {
-        System.out.println("Datos recuperados." + vehiculos);
+        // Implementar lógica para recuperar datos de un archivo o base de datos
+        System.out.println("Datos recuperados: " + vehiculos);
+    }
+
+    // Método adicional para obtener vehículos disponibles
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
     }
 }
