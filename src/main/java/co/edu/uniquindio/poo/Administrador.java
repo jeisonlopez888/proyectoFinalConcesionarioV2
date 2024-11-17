@@ -1,10 +1,16 @@
 package co.edu.uniquindio.poo;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Administrador extends Usuario implements IReporte, ISeguridad {
     protected List<Empleado> empleados = new LinkedList<>();
+    protected List<Administrador> administradores = new LinkedList<>();
+    
+    // Atributos para la recuperación de contraseña
+    private String preguntaSeguridad = "¿Cuál es el nombre de tu primera mascota?";
+    private String respuestaSeguridad = "mascota123"; // Respuesta predefinida
 
     @Override
     public void generarReportes() {
@@ -18,19 +24,57 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
 
     public void gestionarEmpleado(Empleado empleado) {
         empleados.add(empleado);
-        System.out.println("Empleado gestionado: " + empleado);
+        System.out.println("Empleado gestionado: " + empleado.getNombre());
+    }
+
+    public void agregarAdministrador(String nombre, String correo, String contrasena) {
+        Administrador admin = new Administrador();
+        admin.setNombre(nombre);
+        admin.setCorreo(correo);
+        admin.setContrasena(contrasena);
+        administradores.add(admin); // Agregar a la lista de administradores
+        System.out.println("Nuevo administrador agregado: " + admin.getNombre());
+    }
+
+    public List<Administrador> getAdministradores() {
+        return administradores; // Método para obtener la lista de administradores
+    }
+
+    public void agregarEmpleadoPredefinido(Empleado empleado) {
+        empleados.add(empleado);
+        System.out.println("Empleado predefinido agregado: " + empleado.getNombre());
     }
 
     public void bloquearEmpleado(Empleado empleado) {
-            empleados.add(empleado);
-            System.out.println("Empleado bloqueado: " + empleado);
+        // Aquí puedes implementar lógica para bloquear empleados si es necesario.
+        System.out.println("Empleado bloqueado: " + empleado.getNombre());
     }
 
     public void validarCredenciales(String correo, String contrasena) throws ExcepcionCredenciales {
         // Supongamos que las credenciales válidas son "admin@ejemplo.com" y "12345"
-        if (!correo.equals("admin@ejemplo.com") || !contrasena.equals("12345")) {
+        if (!correo.equals("jeison.com") || !contrasena.equals("12345")) {
             throw new ExcepcionCredenciales("Credenciales inválidas");
         }
         System.out.println("Credenciales válidas");
+    }
+
+    // Método para recuperar la contraseña mediante una pregunta de seguridad
+    public boolean recuperarContrasenaPorPregunta(String respuesta) {
+        if (respuesta.equals(respuestaSeguridad)) {
+            System.out.println("Respuesta correcta. Tu contraseña es: " + getContrasena());
+            return true; // Recuperación exitosa
+        } else {
+            System.out.println("Respuesta incorrecta.");
+            return false; // Recuperación fallida
+        }
+    }
+
+    // Método para obtener la pregunta de seguridad
+    public String getPreguntaSeguridad() {
+        return preguntaSeguridad;
+    }
+
+    public List<Empleado> getEmpleados() {
+        return empleados;
     }
 }

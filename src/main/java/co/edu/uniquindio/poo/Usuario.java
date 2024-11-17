@@ -3,9 +3,9 @@ package co.edu.uniquindio.poo;
 
 
 public abstract class Usuario implements ICredenciales {
-    public String nombre;
-    public String correo;
-    public String contrasena;
+    protected String nombre;
+    protected String correo;
+    protected String contrasena;
 
     @Override
     public boolean login(String correo, String contrasena) {
@@ -13,10 +13,12 @@ public abstract class Usuario implements ICredenciales {
     }
 
     @Override
-    public void recuperarContrasena() {
+    public boolean recuperarContrasena(String respuesta) {
         System.out.println("Recuperando contraseña para " + correo);
+        return false; // Este método debería ser implementado en las subclases
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -37,8 +39,7 @@ public abstract class Usuario implements ICredenciales {
         return contrasena;
     }
 
-    public void setPassword(String contrasena) {
-        this.contrasena = contrasena;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena; // Este método debe estar definido
     }
 }
- 
