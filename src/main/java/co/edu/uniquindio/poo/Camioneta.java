@@ -12,7 +12,7 @@ public class Camioneta extends Vehiculo {
     protected String sensoresColision;
     protected String sensorTraficoCruzado;
     protected String asistentePermanenciaCarril;
-    protected String cuatroXCuatro; ...
+    protected String cuatroXCuatro; .
     
     @Override
     public String toString() {
