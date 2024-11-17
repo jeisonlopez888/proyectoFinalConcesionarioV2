@@ -33,7 +33,7 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     }
 
     public void validarCredenciales(String correo, String contrasena) throws ExcepcionCredenciales {
-        // Supongamos que las credenciales válidas son "admin@ejemplo.com" y "12345"
+        // Supongamos que las credenciales válidas son "jeison@e.com" y "12345"
         if (!correo.equals(this.getCorreo()) || !contrasena.equals(this.getContrasena())) {
             throw new ExcepcionCredenciales("Credenciales inválidas");
         }

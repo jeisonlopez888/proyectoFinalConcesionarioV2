@@ -18,4 +18,5 @@ public abstract class Vehiculo {
                 ", \n velocidadMaxima = " + velocidadMaxima + ", \n cilindraje = " + cilindraje +
                 ", \n tipoTransmision = '" + tipoTransmision + '\'' + ", \n tipoCombustible = '" + tipoCombustible + '\'';
     }
+    
 }
