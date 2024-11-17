@@ -27,7 +27,7 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
         System.out.println("Empleado gestionado: " + empleado.getNombre());
     }
 
-    public void agregarAdministrador(String nombre, String correo, String contrasena) {
+    public void gestionarAdministrador(String nombre, String correo, String contrasena) {
         Administrador administrador = new Administrador();
         administrador.setNombre(nombre);
         administrador.setCorreo(correo);
@@ -38,11 +38,6 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
 
     public List<Administrador> getAdministradores() {
         return administradores; // Método para obtener la lista de administradores
-    }
-
-    public void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
-        System.out.println("Empleado agregado: " + empleado.getNombre());
     }
 
     public void bloquearEmpleado(Empleado empleado) {

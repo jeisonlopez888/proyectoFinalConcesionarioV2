@@ -55,9 +55,9 @@ public class App {
         empleado3.setContrasena("12345");
 
         // Agregar empleados al administrador
-        administrador.agregarEmpleado(empleado1);
-        administrador.agregarEmpleado(empleado2);
-        administrador.agregarEmpleado(empleado3);
+        administrador.gestionarEmpleado(empleado1);
+        administrador.gestionarEmpleado(empleado2);
+        administrador.gestionarEmpleado(empleado3);
 
         // Registro de clientes 
         Cliente cliente1 = new Cliente();
@@ -237,7 +237,7 @@ public class App {
        }
     }
 
-    private static void gestionarAdministrador(Scanner scanner, Administrador admin) {
+    private static void gestionarAdministrador(Scanner scanner, Administrador administrador) {
        System.out.print("\nIngrese el nombre del nuevo administrador: ");
        String nombreAdministrador = scanner.nextLine();
 
@@ -247,10 +247,10 @@ public class App {
        System.out.print("\nIngrese la contraseña del nuevo administrador: ");
        String contrasenaAdministrador = scanner.nextLine();
 
-       admin.agregarAdministrador(nombreAdministrador, correoAdministrador, contrasenaAdministrador); 
+       administrador.gestionarAdministrador(nombreAdministrador, correoAdministrador, contrasenaAdministrador); 
     }
 
-    private static void gestionarEmpleado(Scanner scanner, Administrador admin) {
+    private static void gestionarEmpleado(Scanner scanner, Administrador administrador) {
        System.out.print("\nIngrese el nombre del nuevo empleado: ");
        String nombreEmpleado = scanner.nextLine();
 
@@ -265,10 +265,10 @@ public class App {
        nuevoEmpleado.setCorreo(correoEmpleado);
        nuevoEmpleado.setContrasena(contrasenaEmpleado);
 
-       admin.agregarEmpleado(nuevoEmpleado); 
+       administrador.gestionarEmpleado(nuevoEmpleado); 
     }
 
-    private static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador admin) {
+    private static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador administrador) {
        // Seleccionar un cliente
        Cliente clienteSeleccionado = seleccionarCliente(scanner, tuCarroUQ);
        if (clienteSeleccionado == null) return; // Si no se seleccionó un cliente
@@ -305,13 +305,13 @@ public class App {
        
        switch (tipoTransaccion) {
            case 1:
-               tuCarroUQ.realizarAlquiler(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(admin));
+               tuCarroUQ.realizarAlquiler(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(administrador));
                break;
            case 2:
-               tuCarroUQ.realizarVenta(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(admin));
+               tuCarroUQ.realizarVenta(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(administrador));
                break;
            case 3:
-               tuCarroUQ.realizarCompra(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(admin));
+               tuCarroUQ.realizarCompra(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(administrador));
                break;
            default:
                System.out.println("Tipo de transacción no válido.");
@@ -366,8 +366,8 @@ public class App {
       tuCarroUQ.registrarCliente(nuevoCliente);
    }
 
-   private static Empleado seleccionarEmpleado(Administrador admin) {
-      List<Empleado> empleados = admin.getEmpleados();
+   private static Empleado seleccionarEmpleado(Administrador administrador) {
+      List<Empleado> empleados = administrador.getEmpleados();
 
       if (empleados.isEmpty()) {
           System.out.println("No hay empleados disponibles.");
