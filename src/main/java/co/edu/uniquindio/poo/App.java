@@ -38,7 +38,7 @@ public class App {
             }
         }
 
-        // Registro de empleados predefinidos
+        // Registro de empleados 
         Empleado empleado1 = new Empleado();
         empleado1.setNombre("Moises Vargas");
         empleado1.setCorreo("moiso@ejemplo.com");
@@ -54,12 +54,12 @@ public class App {
         empleado3.setCorreo("pepito@ejemplo.com");
         empleado3.setContrasena("12345");
 
-        // Agregar empleados predefinidos al administrador
-        administrador.agregarEmpleadoPredefinido(empleado1);
-        administrador.agregarEmpleadoPredefinido(empleado2);
-        administrador.agregarEmpleadoPredefinido(empleado3);
+        // Agregar empleados al administrador
+        administrador.agregarEmpleado(empleado1);
+        administrador.agregarEmpleado(empleado2);
+        administrador.agregarEmpleado(empleado3);
 
-        // Registro de clientes predefinidos
+        // Registro de clientes 
         Cliente cliente1 = new Cliente();
         cliente1.setNombre("Juan Perez");
         cliente1.setDocumento("123456789");
@@ -82,7 +82,7 @@ public class App {
 		tuCarroUQ.registrarCliente(cliente2);
 		tuCarroUQ.registrarCliente(cliente3);
 
-		// Registro de vehículos predefinidos
+		// Registro de vehículos 
 		
 		
         Vehiculo vehiculo1 = new Sedan();
@@ -239,15 +239,15 @@ public class App {
 
     private static void gestionarAdministrador(Scanner scanner, Administrador admin) {
        System.out.print("\nIngrese el nombre del nuevo administrador: ");
-       String nombreAdmin = scanner.nextLine();
+       String nombreAdministrador = scanner.nextLine();
 
        System.out.print("\nIngrese el correo del nuevo administrador: ");
-       String correoAdmin = scanner.nextLine();
+       String correoAdministrador = scanner.nextLine();
 
        System.out.print("\nIngrese la contraseña del nuevo administrador: ");
-       String contrasenaAdmin = scanner.nextLine();
+       String contrasenaAdministrador = scanner.nextLine();
 
-       admin.agregarAdministrador(nombreAdmin, correoAdmin, contrasenaAdmin); 
+       admin.agregarAdministrador(nombreAdministrador, correoAdministrador, contrasenaAdministrador); 
     }
 
     private static void gestionarEmpleado(Scanner scanner, Administrador admin) {
@@ -265,7 +265,7 @@ public class App {
        nuevoEmpleado.setCorreo(correoEmpleado);
        nuevoEmpleado.setContrasena(contrasenaEmpleado);
 
-       admin.agregarEmpleadoPredefinido(nuevoEmpleado); 
+       admin.agregarEmpleado(nuevoEmpleado); 
     }
 
     private static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador admin) {

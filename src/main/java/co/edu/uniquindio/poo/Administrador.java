@@ -10,7 +10,7 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     
     // Atributos para la recuperación de contraseña
     private String preguntaSeguridad = "¿Cuál es el nombre de tu primera mascota?";
-    private String respuestaSeguridad = "mascota123"; // Respuesta predefinida
+    private String respuestaSeguridad = "mascota123"; // Respuesta 
 
     @Override
     public void generarReportes() {
@@ -33,16 +33,16 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
         administrador.setCorreo(correo);
         administrador.setContrasena(contrasena);
         administradores.add(administrador); // Agregar a la lista de administradores
-        System.out.println("Nuevo administrador agregado: " + admin.getNombre());
+        System.out.println("Nuevo administrador agregado: " + administrador.getNombre());
     }
 
     public List<Administrador> getAdministradores() {
         return administradores; // Método para obtener la lista de administradores
     }
 
-    public void agregarEmpleadoPredefinido(Empleado empleado) {
+    public void agregarEmpleado(Empleado empleado) {
         empleados.add(empleado);
-        System.out.println("Empleado predefinido agregado: " + empleado.getNombre());
+        System.out.println("Empleado agregado: " + empleado.getNombre());
     }
 
     public void bloquearEmpleado(Empleado empleado) {
