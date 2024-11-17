@@ -200,29 +200,24 @@ public class App {
        // Menú principal después de iniciar sesión exitosamente
        while (true) {
            System.out.println("\n¿Qué desea hacer?");
-           System.out.println("1. Gestionar Administrador");
-           System.out.println("2. Gestionar Empleado");
-           System.out.println("3. Realizar transacción");
-           System.out.println("4. Mostrar transacciones realizadas");
-           System.out.println("5. Salir");
+           System.out.println("1. Gestionar Empleado");
+           System.out.println("2. Realizar transacción");
+           System.out.println("3. Mostrar transacciones realizadas");
+           System.out.println("4. Salir");
 
            int opcion = scanner.nextInt();
            scanner.nextLine(); // Consumir nueva línea
 
            switch (opcion) {
                case 1:
-                   gestionarAdministrador(scanner, administrador); // Método para gestionar administradores
-                   break;
-
-               case 2:
                    gestionarEmpleado(scanner, administrador); // Método para gestionar empleados
                    break;
 
-               case 3:
+               case 2:
                    realizarTransaccion(scanner, tuCarroUQ, administrador); // Método para realizar transacciones
                    break;
 
-               case 4:
+               case 3:
                    tuCarroUQ.generarReportes(); // Método para mostrar transacciones
                    break;
 
@@ -235,19 +230,6 @@ public class App {
                    System.out.println("Opción no válida.");
            }
        }
-    }
-
-    private static void gestionarAdministrador(Scanner scanner, Administrador administrador) {
-       System.out.print("\nIngrese el nombre del nuevo administrador: ");
-       String nombreAdministrador = scanner.nextLine();
-
-       System.out.print("\nIngrese el correo del nuevo administrador: ");
-       String correoAdministrador = scanner.nextLine();
-
-       System.out.print("\nIngrese la contraseña del nuevo administrador: ");
-       String contrasenaAdministrador = scanner.nextLine();
-
-       administrador.gestionarAdministrador(nombreAdministrador, correoAdministrador, contrasenaAdministrador); 
     }
 
     private static void gestionarEmpleado(Scanner scanner, Administrador administrador) {

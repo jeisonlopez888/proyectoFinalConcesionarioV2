@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Administrador extends Usuario implements IReporte, ISeguridad {
     protected List<Empleado> empleados = new LinkedList<>();
-    protected List<Administrador> administradores = new LinkedList<>();
+   
     
     // Atributos para la recuperación de contraseña
     private String preguntaSeguridad = "¿Cuál es el nombre de tu primera mascota?";
@@ -25,19 +25,6 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     public void gestionarEmpleado(Empleado empleado) {
         empleados.add(empleado);
         System.out.println("Empleado gestionado: " + empleado.getNombre());
-    }
-
-    public void gestionarAdministrador(String nombre, String correo, String contrasena) {
-        Administrador administrador = new Administrador();
-        administrador.setNombre(nombre);
-        administrador.setCorreo(correo);
-        administrador.setContrasena(contrasena);
-        administradores.add(administrador); // Agregar a la lista de administradores
-        System.out.println("Nuevo administrador agregado: " + administrador.getNombre());
-    }
-
-    public List<Administrador> getAdministradores() {
-        return administradores; // Método para obtener la lista de administradores
     }
 
     public void bloquearEmpleado(Empleado empleado) {
