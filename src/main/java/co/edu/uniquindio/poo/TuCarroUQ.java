@@ -69,6 +69,10 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
         System.out.println("Datos recuperados: " + vehiculos);
     }
 
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
     // Método adicional para obtener vehículos disponibles
     public List<Vehiculo> getVehiculos() {
         return vehiculos;
