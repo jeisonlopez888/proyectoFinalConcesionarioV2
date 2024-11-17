@@ -28,11 +28,11 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     }
 
     public void agregarAdministrador(String nombre, String correo, String contrasena) {
-        Administrador admin = new Administrador();
-        admin.setNombre(nombre);
-        admin.setCorreo(correo);
-        admin.setContrasena(contrasena);
-        administradores.add(admin); // Agregar a la lista de administradores
+        Administrador administrador = new Administrador();
+        administrador.setNombre(nombre);
+        administrador.setCorreo(correo);
+        administrador.setContrasena(contrasena);
+        administradores.add(administrador); // Agregar a la lista de administradores
         System.out.println("Nuevo administrador agregado: " + admin.getNombre());
     }
 

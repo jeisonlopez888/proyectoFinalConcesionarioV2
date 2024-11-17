@@ -11,10 +11,10 @@ public class App {
         TuCarroUQ tuCarroUQ = new TuCarroUQ(); // Cambia a tu implementación concreta
 
         // Crear y configurar el administrador
-        Administrador admin = new Administrador();
-        admin.setNombre("jeison");
-        admin.setCorreo("jeison@e.com");
-        admin.setContrasena("12345");
+        Administrador administrador = new Administrador();
+        administrador.setNombre("jeison");
+        administrador.setCorreo("jeison@e.com");
+        administrador.setContrasena("12345");
 
         // Intentar validar credenciales
         while (true) {
@@ -24,16 +24,16 @@ public class App {
             String contrasena = scanner.nextLine();
 
             try {
-                admin.validarCredenciales(correo, contrasena); // Validar credenciales
+                administrador.validarCredenciales(correo, contrasena); // Validar credenciales
                 break; // Salir del bucle si las credenciales son válidas
             } catch (ExcepcionCredenciales e) {
                 System.err.println(e.getMessage()); // Mostrar mensaje de error
                 System.out.print("¿Desea recuperar su contraseña? (si/no): ");
                 String respuesta = scanner.nextLine();
                 if (respuesta.equalsIgnoreCase("si")) {
-                    System.out.print(admin.getPreguntaSeguridad() + ": ");
+                    System.out.print(administrador.getPreguntaSeguridad() + ": ");
                     String respuestaSeguridad = scanner.nextLine();
-                    admin.recuperarContrasenaPorPregunta(respuestaSeguridad);
+                    administrador.recuperarContrasenaPorPregunta(respuestaSeguridad);
                 }
             }
         }
@@ -55,9 +55,9 @@ public class App {
         empleado3.setContrasena("12345");
 
         // Agregar empleados predefinidos al administrador
-        admin.agregarEmpleadoPredefinido(empleado1);
-        admin.agregarEmpleadoPredefinido(empleado2);
-        admin.agregarEmpleadoPredefinido(empleado3);
+        administrador.agregarEmpleadoPredefinido(empleado1);
+        administrador.agregarEmpleadoPredefinido(empleado2);
+        administrador.agregarEmpleadoPredefinido(empleado3);
 
         // Registro de clientes predefinidos
         Cliente cliente1 = new Cliente();
@@ -211,15 +211,15 @@ public class App {
 
            switch (opcion) {
                case 1:
-                   gestionarAdministrador(scanner, admin); // Método para gestionar administradores
+                   gestionarAdministrador(scanner, administrador); // Método para gestionar administradores
                    break;
 
                case 2:
-                   gestionarEmpleado(scanner, admin); // Método para gestionar empleados
+                   gestionarEmpleado(scanner, administrador); // Método para gestionar empleados
                    break;
 
                case 3:
-                   realizarTransaccion(scanner, tuCarroUQ, admin); // Método para realizar transacciones
+                   realizarTransaccion(scanner, tuCarroUQ, administrador); // Método para realizar transacciones
                    break;
 
                case 4:
