@@ -232,7 +232,7 @@ public class App {
        }
     }
 
-    private static void gestionarEmpleado(Scanner scanner, Administrador administrador) {
+    protected static void gestionarEmpleado(Scanner scanner, Administrador administrador) {
        System.out.print("\nIngrese el nombre del nuevo empleado: ");
        String nombreEmpleado = scanner.nextLine();
 
@@ -250,7 +250,7 @@ public class App {
        administrador.gestionarEmpleado(nuevoEmpleado); 
     }
 
-    private static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador administrador) {
+    protected static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador administrador) {
        // Seleccionar un cliente
        Cliente clienteSeleccionado = seleccionarCliente(scanner, tuCarroUQ);
        if (clienteSeleccionado == null) return; // Si no se seleccionó un cliente
@@ -301,7 +301,7 @@ public class App {
        }
    }
 
-   private static Cliente seleccionarCliente(Scanner scanner, TuCarroUQ tuCarroUQ) {
+   protected static Cliente seleccionarCliente(Scanner scanner, TuCarroUQ tuCarroUQ) {
       List<Cliente> clientesDisponibles = tuCarroUQ.getClientes(); // Obtener clientes disponibles
 
       if (clientesDisponibles.isEmpty()) {
@@ -330,7 +330,7 @@ public class App {
       }
    }
 
-   private static void registrarCliente(Scanner scanner, TuCarroUQ tuCarroUQ) {
+   protected static void registrarCliente(Scanner scanner, TuCarroUQ tuCarroUQ) {
       Cliente nuevoCliente = new Cliente();
       
       System.out.print("\nIngrese el nombre del cliente: ");
@@ -348,7 +348,7 @@ public class App {
       tuCarroUQ.registrarCliente(nuevoCliente);
    }
 
-   private static Empleado seleccionarEmpleado(Administrador administrador) {
+   protected static Empleado seleccionarEmpleado(Administrador administrador) {
       List<Empleado> empleados = administrador.getEmpleados();
 
       if (empleados.isEmpty()) {

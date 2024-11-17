@@ -9,8 +9,8 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
    
     
     // Atributos para la recuperación de contraseña
-    private String preguntaSeguridad = "¿Cuál es el nombre de tu primera mascota?";
-    private String respuestaSeguridad = "mascota123"; // Respuesta 
+    protected String preguntaSeguridad = "¿Cuál es el nombre de tu primera mascota?";
+    protected String respuestaSeguridad = "mascota123"; // Respuesta 
 
     @Override
     public void generarReportes() {
