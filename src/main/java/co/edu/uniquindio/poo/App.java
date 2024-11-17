@@ -13,7 +13,7 @@ public class App {
         // Crear y configurar el administrador
         Administrador admin = new Administrador();
         admin.setNombre("jeison");
-        admin.setCorreo("jeison@ejemplo.com");
+        admin.setCorreo("jeison@e.com");
         admin.setContrasena("12345");
 
         // Intentar validar credenciales
@@ -78,12 +78,14 @@ public class App {
         cliente3.setTelefono("1234-555");
         cliente3.setDireccion("Avenida Siempre Viva");
 
-        tuCarroUQ.registrarCliente(cliente1);
-        tuCarroUQ.registrarCliente(cliente2);
-        tuCarroUQ.registrarCliente(cliente3);
+		tuCarroUQ.registrarCliente(cliente1);
+		tuCarroUQ.registrarCliente(cliente2);
+		tuCarroUQ.registrarCliente(cliente3);
 
-        // Registro de vehículos predefinidos
-         Vehiculo vehiculo1 = new Sedan();
+		// Registro de vehículos predefinidos
+		
+		
+        Vehiculo vehiculo1 = new Sedan();
         vehiculo1.marca = "Toyota";
         vehiculo1.modelo = "Corolla";
         vehiculo1.cilindraje = "1600 cc";
@@ -103,7 +105,8 @@ public class App {
         vehiculo2.nuevo = "usado";
         vehiculo2.tipoTransmision = "mecánica";
         vehiculo2.tipoCombustible = "gasolina";
-         Vehiculo vehiculo3 = new Deportivo();
+
+        Vehiculo vehiculo3 = new Deportivo();
         vehiculo3.marca = "lamborgini";
         vehiculo3.modelo= "egoista";
         vehiculo3.cilindraje = "5200 cc";
