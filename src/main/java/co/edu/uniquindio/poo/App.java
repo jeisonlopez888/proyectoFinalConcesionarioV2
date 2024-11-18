@@ -14,7 +14,7 @@ public class App {
         // Crear y configurar el administrador
         Administrador administrador = new Administrador();
         administrador.setNombre("jeison");
-        administrador.setCorreo("jeison@e.com");
+        administrador.setCorreo("jeison@.com");
         administrador.setContrasena("12345");
 
         // Intentar validar credenciales
@@ -306,7 +306,7 @@ public class App {
      }
 
      Scanner scanner=new Scanner(System.in);
-
+     System.out.println("\nSeleccione un empleado:");
      for (int i=0; i<empleados.size(); i++) {
          System.out.println((i + 1)+". "+empleados.get(i).getNombre());
      }

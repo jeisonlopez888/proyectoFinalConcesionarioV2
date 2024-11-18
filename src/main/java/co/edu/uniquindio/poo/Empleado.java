@@ -8,6 +8,8 @@ public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCli
     protected List<Cliente> clientes = new LinkedList<>();
     protected List<Transaccion> transacciones = new LinkedList<>();
 
+
+
     @Override
     public void registrarVehiculo(Vehiculo vehiculo) {
         vehiculos.add(vehiculo);

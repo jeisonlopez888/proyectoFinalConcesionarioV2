@@ -7,8 +7,10 @@ public class Cliente {
     public String telefono;
     public String direccion;
 
-    public Cliente() {}
+    
         
+    
+
     public String getNombre() {
         return nombre;
     }
