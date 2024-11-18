@@ -44,10 +44,10 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
         System.out.println("Empleado bloqueado: " + empleado.getNombre());
     }
 
-    public void validarCredenciales(String correo, String contrasena) throws ExcepcionCredenciales {
+    public void validarCredenciales(String correo, String contrasena) throws ExceptionCredenciales {
         // Supongamos que las credenciales válidas son "jeison@e.com" y "12345"
         if (!correo.equals(this.getCorreo()) || !contrasena.equals(this.getContrasena())) {
-            throw new ExcepcionCredenciales("Credenciales inválidas");
+            throw new ExceptionCredenciales("Credenciales inválidas");
         }
         System.out.println("Credenciales válidas");
     }

@@ -26,7 +26,7 @@ public class App {
                 administrador.validarCredenciales(correo, contrasena); // Validar credenciales
                 System.out.println("Credenciales válidas"); // Mensaje de éxito
                 break; // Salir del bucle si las credenciales son válidas
-            } catch (ExcepcionCredenciales e) {
+            } catch (ExceptionCredenciales e) {
                 System.err.println(e.getMessage()); // Mostrar mensaje de error
                 System.out.print("¿Desea recuperar su contraseña? (si/no): ");
                 String respuesta = scanner.nextLine();

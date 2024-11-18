@@ -22,7 +22,7 @@ public class AdministradorTest {
         try {
             administrador.validarCredenciales("incorrecto@e.com", "wrongpassword");
             fail("Se esperaba una excepción para credenciales inválidas.");
-        } catch (ExcepcionCredenciales e) {
+        } catch (ExceptionCredenciales e) {
             LOG.info("Excepción esperada lanzada: " + e.getMessage());
         }
 
