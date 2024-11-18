@@ -7,12 +7,12 @@ import java.util.List;
 public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacciones, IReporte, IAlmacenamiento {
     protected List<Empleado> empleados = new LinkedList<>();
     protected List<Cliente> clientes = new LinkedList<>();
-    protected List<Vehiculo> vehiculos = new LinkedList<>();
+    protected List<Vehiculo> vehiculosDisponibles = new LinkedList<>();
     protected List<Transaccion> transacciones = new LinkedList<>();
 
     @Override
     public void registrarVehiculo(Vehiculo vehiculo) {
-        vehiculos.add(vehiculo);
+        vehiculosDisponibles.add(vehiculo);
         System.out.println("Vehículo registrado en TuCarroUQ: " + vehiculo);
     }
 
@@ -23,7 +23,7 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
     }
 
     public void realizarAlquiler(Vehiculo vehiculo, Cliente cliente, Empleado empleado) {
-        if (vehiculos.contains(vehiculo)) {
+        if (vehiculosDisponibles.contains(vehiculo)) {
             transacciones.add(new Transaccion(empleado, cliente, vehiculo, "alquiler"));
             System.out.println("Alquiler realizado en TuCarroUQ para: " + cliente.getNombre());
         } else {
@@ -32,7 +32,7 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
     }
     
     public void realizarVenta(Vehiculo vehiculo, Cliente cliente, Empleado empleado) {
-        if (vehiculos.contains(vehiculo)) {
+        if (vehiculosDisponibles.contains(vehiculo)) {
             transacciones.add(new Transaccion(empleado, cliente, vehiculo, "venta"));
             System.out.println("Venta realizada en TuCarroUQ para: " + cliente.getNombre());
         } else {
@@ -41,7 +41,7 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
     }
     
     public void realizarCompra(Vehiculo vehiculo, Cliente cliente, Empleado empleado) {
-        if (vehiculos.contains(vehiculo)) {
+        if (vehiculosDisponibles.contains(vehiculo)) {
             transacciones.add(new Transaccion(empleado, cliente, vehiculo, "compra"));
             System.out.println("Compra realizada en TuCarroUQ para: " + cliente.getNombre());
         } else {
@@ -66,7 +66,7 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
     @Override
     public void recuperarDatos() {
         // Implementar lógica para recuperar datos de un archivo o base de datos
-        System.out.println("Datos recuperados: " + vehiculos);
+        System.out.println("Datos recuperados: " + vehiculosDisponibles);
     }
 
     public List<Cliente> getClientes() {
@@ -75,6 +75,6 @@ public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacc
 
     // Método adicional para obtener vehículos disponibles
     public List<Vehiculo> getVehiculos() {
-        return vehiculos;
+        return vehiculosDisponibles;
     }
 }

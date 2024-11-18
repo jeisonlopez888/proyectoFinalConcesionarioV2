@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -136,38 +137,38 @@ public class App {
     protected static void agregarVehiculo(Scanner scanner, TuCarroUQ tuCarroUQ) {
        Vehiculo nuevoVehiculo;
 
-       System.out.print("\nIngrese el tipo de vehículo (Sedan/Moto/Deportivo/Camioneta/PickUp/Van/Bus/Camion/VehiculoElectrico/VehiculoHibrido): ");
+       System.out.print("\nIngrese el tipo de vehículo (\n 1.Sedan\n 2.Moto\n 3.Deportivo\n 4.Camioneta\n 5.PickUp\n 6.Van\n 7.Bus\n 8.Camion\n 9.VehiculoElectrico\n 10.VehiculoHibrido):\n ");
        String tipoVehiculo = scanner.nextLine();
 
        switch (tipoVehiculo.toLowerCase()) {
-           case "sedan":
+           case "1":
                nuevoVehiculo = new Sedan();
                break;
-           case "moto":
+           case "2":
                nuevoVehiculo = new Moto();
                break;
-           case "deportivo":
+           case "3":
                nuevoVehiculo = new Deportivo();
                break;
-           case "camioneta":
+           case "4":
                nuevoVehiculo = new Camioneta();
                break;
-           case "pickup":
+           case "5":
                nuevoVehiculo = new PickUp();
                break;
-           case "van":
+           case "6":
                nuevoVehiculo = new Van();
                break;
-           case "bus":
+           case "7":
                nuevoVehiculo = new Bus();
                break;
-           case "camion":
+           case "8":
                nuevoVehiculo = new Camion();
                break;
-           case "vehiculoelectrico":
+           case "9":
                nuevoVehiculo = new VehiculoElectrico();
                break;
-           case "vehiculohibrido":
+           case "10":
                nuevoVehiculo = new VehiculoHibrido();
                break;
            default:
@@ -202,7 +203,7 @@ public class App {
        
 
        tuCarroUQ.registrarVehiculo(nuevoVehiculo); // Registrar el vehículo en TuCarroUQ
-
+       
        System.out.println("\nVehículo agregado exitosamente.");
     }
 
@@ -225,51 +226,69 @@ public class App {
     }
 
     protected static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador administrador) {
-       Cliente clienteSeleccionado=seleccionarCliente(scanner, tuCarroUQ);
-       if (clienteSeleccionado==null) return; 
+    // Seleccionar el tipo de transacción
+    System.out.println("\nTipo de transacción:");
+    System.out.println("1. Alquiler");
+    System.out.println("2. Venta");
+    System.out.println("3. Compra");
 
-       List<Vehiculo> vehiculosDisponibles=tuCarroUQ.getVehiculos(); 
+    int tipoTransaccion = scanner.nextInt();
 
-       if (vehiculosDisponibles.isEmpty()) {
-           System.out.println("No hay vehículos disponibles.");
-           return;
-       }
+    // Seleccionar empleado
+    Empleado empleadoSeleccionado = seleccionarEmpleado(administrador);
+    if (empleadoSeleccionado == null) return;
 
-       for (int i=0; i<vehiculosDisponibles.size(); i++) {
-           Vehiculo v=vehiculosDisponibles.get(i);
-           System.out.println((i + 1)+". "+v.toString());
-       }
+    // Seleccionar cliente
+    Cliente clienteSeleccionado = seleccionarCliente(scanner, tuCarroUQ);
+    if (clienteSeleccionado == null) return; 
 
-       int seleccionVehiculo=scanner.nextInt()-1; 
-       if (seleccionVehiculo<0 || seleccionVehiculo>=vehiculosDisponibles.size()) {
-           System.out.println("Selección no válida.");
-           return;
-       }
+    // Obtener vehículos disponibles
+    List<Vehiculo> vehiculosDisponibles = tuCarroUQ.getVehiculos(); 
+    if (vehiculosDisponibles.isEmpty()) {
+        System.out.println("No hay vehículos disponibles.");
+        return;
+    }
 
-       Vehiculo vehiculoSeleccionado=vehiculosDisponibles.get(seleccionVehiculo);
+    // Mostrar vehículos disponibles
+    System.out.println("\nVehículos disponibles:");
+    for (int i = 0; i < vehiculosDisponibles.size(); i++) {
+        Vehiculo v = vehiculosDisponibles.get(i);
+        System.out.println((i + 1) + ". " + v.toString());
+    }
 
-       System.out.println("\nTipo de transacción:");
-       System.out.println("1. Alquiler");
-       System.out.println("2. Venta");
-       System.out.println("3. Compra");
+    // Seleccionar vehículo
+    int seleccionVehiculo = scanner.nextInt() - 1; 
+    if (seleccionVehiculo < 0 || seleccionVehiculo >= vehiculosDisponibles.size()) {
+        System.out.println("Selección no válida.");
+        return;
+    }
 
-       int tipoTransaccion=scanner.nextInt();
+    Vehiculo vehiculoSeleccionado = vehiculosDisponibles.get(seleccionVehiculo);
 
-       switch (tipoTransaccion) {
-           case 1:
-               tuCarroUQ.realizarAlquiler(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(administrador));
-               break;
-           case 2:
-               tuCarroUQ.realizarVenta(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(administrador));
-               break;
-           case 3:
-               tuCarroUQ.realizarCompra(vehiculoSeleccionado, clienteSeleccionado, seleccionarEmpleado(administrador));
-               break;
-           default:
-               System.out.println("Tipo de transacción no válido.");
-               break;
-       }
-   }
+    // Realizar la transacción según el tipo seleccionado
+    switch (tipoTransaccion) {
+        case 1:
+            tuCarroUQ.realizarAlquiler(vehiculoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
+            break;
+        case 2:
+            tuCarroUQ.realizarVenta(vehiculoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
+            break;
+        case 3:
+            tuCarroUQ.realizarCompra(vehiculoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
+            break;
+        default:
+            System.out.println("Tipo de transacción no válido.");
+            return;
+    }
+
+    // Mostrar resumen de la transacción
+    System.out.println("\nTransacción realizada con éxito:");
+    System.out.println("Tipo de transacción: " + (tipoTransaccion == 1 ? "Alquiler" : tipoTransaccion == 2 ? "Venta" : "Compra"));
+    System.out.println("Empleado: " + empleadoSeleccionado.getNombre());
+    System.out.println("Cliente: " + clienteSeleccionado.getNombre());
+    System.out.println("Vehículo: " + vehiculoSeleccionado.toString());
+    System.out.println("Fecha de la transacción: " + LocalDate.now());
+}
 
    protected static Cliente seleccionarCliente(Scanner scanner, TuCarroUQ tuCarroUQ) {
       List<Cliente> clientesDisponibles=tuCarroUQ.getClientes(); 
@@ -341,6 +360,6 @@ public class App {
       } else {
           System.out.println("Selección no válida.");
           return null; 
-      }
-   }
+        }
+    }
 }

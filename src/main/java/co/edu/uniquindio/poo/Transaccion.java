@@ -20,6 +20,6 @@ public class Transaccion {
 
     @Override
     public String toString() { 
-        return "Transaccion " + "\n empleado=" + empleado.getNombre() + ", \n cliente=" + cliente + ", \n vehiculo=" + vehiculo + ", \n fecha=" + fecha + ", \n tipoTransaccion='" + tipoTransaccion ; }
+        return "Transaccion " + "\n empleado = " + empleado.getNombre() + ", \n cliente = " + cliente + ", \n\n vehiculo = " + vehiculo + ", \n fecha = " + fecha + ", \n tipoTransaccion = '" + tipoTransaccion ; }
 }
  
