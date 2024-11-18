@@ -4,11 +4,11 @@ package co.edu.uniquindio.poo;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, ITransacciones, IReporte, IAlmacenamiento {
+public class TuCarroUQ implements IRegistroVehiculo, IRegistroCliente, IReporte, IAlmacenamiento {
     protected List<Empleado> empleados = new LinkedList<>();
-    protected List<Cliente> clientes = new LinkedList<>();
-    protected List<Vehiculo> vehiculosDisponibles = new LinkedList<>();
-    protected List<Transaccion> transacciones = new LinkedList<>();
+    private List<Cliente> clientes = new LinkedList<>();
+    private List<Vehiculo> vehiculosDisponibles = new LinkedList<>();
+    private List<Transaccion> transacciones = new LinkedList<>();
 
     @Override
     public void registrarVehiculo(Vehiculo vehiculo) {
