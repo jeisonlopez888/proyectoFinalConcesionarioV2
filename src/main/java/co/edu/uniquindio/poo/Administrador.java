@@ -4,7 +4,10 @@ package co.edu.uniquindio.poo;
 import java.util.LinkedList;
 import java.util.List;
 
-
+/**
+ * Clase que representa a un Administrador, que extiende de Usuario
+ * e implementa las interfaces IReporte e ISeguridad.
+ */
 public class Administrador extends Usuario implements IReporte, ISeguridad {
     private List<Empleado> empleados = new LinkedList<>();
 
@@ -12,9 +15,13 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     private String preguntaSeguridad = "¿Cuál es el nombre de tu primera mascota?";
     private String respuestaSeguridad = "mascota123"; // Respuesta 
 
+
     @Override
     public void generarReportes() {
         System.out.println("Generando reportes...");
+        for (Empleado empleado : empleados) {
+            System.out.println("Empleado: " + empleado.getNombre());
+        }
     }
 
     @Override
@@ -45,14 +52,12 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
     }
 
     public void validarCredenciales(String correo, String contrasena) throws ExceptionCredenciales {
-        // Supongamos que las credenciales válidas son "jeison@e.com" y "12345"
         if (!correo.equals(this.getCorreo()) || !contrasena.equals(this.getContrasena())) {
             throw new ExceptionCredenciales("Credenciales inválidas");
         }
         System.out.println("Credenciales válidas");
     }
 
-    // Método para recuperar la contraseña mediante una pregunta de seguridad
     public boolean recuperarContrasenaPorPregunta(String respuesta) {
         if (respuesta.equals(respuestaSeguridad)) {
             System.out.println("Respuesta correcta. Tu contraseña es: " + getContrasena());
@@ -63,7 +68,6 @@ public class Administrador extends Usuario implements IReporte, ISeguridad {
         }
     }
 
-    // Método para obtener la pregunta de seguridad
     public String getPreguntaSeguridad() {
         return preguntaSeguridad;
     }

@@ -3,11 +3,14 @@ package co.edu.uniquindio.poo;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Clase que representa a un Empleado, que extiende de Usuario
+ * e implementa las interfaces IRegistroVehiculo, IRegistroCliente y ITransacciones.
+ */
 public class Empleado extends Usuario implements IRegistroVehiculo, IRegistroCliente, ITransacciones {
     private List<Vehiculo> vehiculos = new LinkedList<>();
     private List<Cliente> clientes = new LinkedList<>();
     private List<Transaccion> transacciones = new LinkedList<>();
-
 
 
     @Override
