@@ -7,9 +7,6 @@ public interface ICredenciales {
     
     /**
      * Método para realizar el login del usuario.
-     * @param correo El correo electrónico del usuario.
-     * @param password La contraseña del usuario.
-     * @return true si el login es exitoso, false en caso contrario.
      */
     boolean login(String correo, String password);
 
