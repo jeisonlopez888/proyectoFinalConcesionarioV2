@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo;
 
+
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -44,55 +46,14 @@ public class App {
         // Registro de clientes 
         registrarClientes(tuCarroUQ);
 
+        // Registro de vehículos predefinidos
+        registrarVehiculos(tuCarroUQ);
+
         // Menú principal después de iniciar sesión exitosamente
         mostrarMenuPrincipal(scanner, tuCarroUQ, administrador);
     }
 
-    private static void registrarEmpleados(Administrador administrador) {
-        Empleado empleado1 = new Empleado();
-        empleado1.setNombre("Moises Vargas");
-        empleado1.setCorreo("moiso@ejemplo.com");
-        empleado1.setContrasena("12345");
-
-        Empleado empleado2 = new Empleado();
-        empleado2.setNombre("Jeison Lopez");
-        empleado2.setCorreo("jeison@ejemplo.com");
-        empleado2.setContrasena("12345");
-
-        Empleado empleado3 = new Empleado();
-        empleado3.setNombre("Pepito Perez");
-        empleado3.setCorreo("pepito@ejemplo.com");
-        empleado3.setContrasena("12345");
-
-        // Agregar empleados al administrador
-        administrador.gestionarEmpleado(empleado1);
-        administrador.gestionarEmpleado(empleado2);
-        administrador.gestionarEmpleado(empleado3);
-    }
-
-    private static void registrarClientes(TuCarroUQ tuCarroUQ) {
-        Cliente cliente1 = new Cliente();
-        cliente1.setNombre("Juan Perez");
-        cliente1.setDocumento("123456789");
-        cliente1.setTelefono("555-1234");
-        cliente1.setDireccion("Calle Falsa 123");
-
-        Cliente cliente2 = new Cliente();
-        cliente2.setNombre("Carlos Trujillo");
-        cliente2.setDocumento("56789");
-        cliente2.setTelefono("3104443442");
-        cliente2.setDireccion("Calle 45a # 2021");
-
-        Cliente cliente3 = new Cliente();
-        cliente3.setNombre("Mariana Yepes");
-        cliente3.setDocumento("987654321");
-        cliente3.setTelefono("1234-555");
-        cliente3.setDireccion("Avenida Siempre Viva");
-
-		tuCarroUQ.registrarCliente(cliente1);
-		tuCarroUQ.registrarCliente(cliente2);
-		tuCarroUQ.registrarCliente(cliente3);
-    }
+    
 
     private static void mostrarMenuPrincipal(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador administrador) {
        while (true) {
@@ -200,10 +161,9 @@ public class App {
 
        System.out.print("\nIngrese el tipo de combustible: ");
        nuevoVehiculo.tipoCombustible = scanner.nextLine();
-       
 
        tuCarroUQ.registrarVehiculo(nuevoVehiculo); // Registrar el vehículo en TuCarroUQ
-       
+
        System.out.println("\nVehículo agregado exitosamente.");
     }
 
@@ -226,69 +186,69 @@ public class App {
     }
 
     protected static void realizarTransaccion(Scanner scanner, TuCarroUQ tuCarroUQ, Administrador administrador) {
-    // Seleccionar el tipo de transacción
-    System.out.println("\nTipo de transacción:");
-    System.out.println("1. Alquiler");
-    System.out.println("2. Venta");
-    System.out.println("3. Compra");
+      // Seleccionar el tipo de transacción
+      System.out.println("\nTipo de transacción:");
+      System.out.println("1. Alquiler");
+      System.out.println("2. Venta");
+      System.out.println("3. Compra");
 
-    int tipoTransaccion = scanner.nextInt();
+      int tipoTransaccion = scanner.nextInt();
 
-    // Seleccionar empleado
-    Empleado empleadoSeleccionado = seleccionarEmpleado(administrador);
-    if (empleadoSeleccionado == null) return;
+      // Seleccionar empleado
+      Empleado empleadoSeleccionado = seleccionarEmpleado(administrador);
+      if (empleadoSeleccionado == null) return;
 
-    // Seleccionar cliente
-    Cliente clienteSeleccionado = seleccionarCliente(scanner, tuCarroUQ);
-    if (clienteSeleccionado == null) return; 
+      // Seleccionar cliente
+      Cliente clienteSeleccionado = seleccionarCliente(scanner, tuCarroUQ);
+      if (clienteSeleccionado == null) return; 
 
-    // Obtener vehículos disponibles
-    List<Vehiculo> vehiculosDisponibles = tuCarroUQ.getVehiculos(); 
-    if (vehiculosDisponibles.isEmpty()) {
-        System.out.println("No hay vehículos disponibles.");
-        return;
-    }
+      // Obtener vehículos disponibles
+      List<Vehiculo> vehiculosDisponibles = tuCarroUQ.getVehiculos(); 
+      if (vehiculosDisponibles.isEmpty()) {
+          System.out.println("No hay vehículos disponibles.");
+          return;
+      }
 
-    // Mostrar vehículos disponibles
-    System.out.println("\nVehículos disponibles:");
-    for (int i = 0; i < vehiculosDisponibles.size(); i++) {
-        Vehiculo v = vehiculosDisponibles.get(i);
-        System.out.println((i + 1) + ". " + v.toString());
-    }
+      // Mostrar vehículos disponibles
+      System.out.println("\nVehículos disponibles:");
+      for (int i = 0; i < vehiculosDisponibles.size(); i++) {
+          Vehiculo v = vehiculosDisponibles.get(i);
+          System.out.println((i + 1) + ". " + v.toString());
+      }
 
-    // Seleccionar vehículo
-    int seleccionVehiculo = scanner.nextInt() - 1; 
-    if (seleccionVehiculo < 0 || seleccionVehiculo >= vehiculosDisponibles.size()) {
-        System.out.println("Selección no válida.");
-        return;
-    }
+      // Seleccionar vehículo
+      int seleccionVehiculo = scanner.nextInt() - 1; 
+      if (seleccionVehiculo < 0 || seleccionVehiculo >= vehiculosDisponibles.size()) {
+          System.out.println("Selección no válida.");
+          return;
+      }
 
-    Vehiculo vehiculoSeleccionado = vehiculosDisponibles.get(seleccionVehiculo);
+      Vehiculo vehículoSeleccionado= vehiculosDisponibles.get(seleccionVehiculo);
 
-    // Realizar la transacción según el tipo seleccionado
-    switch (tipoTransaccion) {
-        case 1:
-            tuCarroUQ.realizarAlquiler(vehiculoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
-            break;
-        case 2:
-            tuCarroUQ.realizarVenta(vehiculoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
-            break;
-        case 3:
-            tuCarroUQ.realizarCompra(vehiculoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
-            break;
-        default:
-            System.out.println("Tipo de transacción no válido.");
-            return;
-    }
+      // Realizar la transacción según el tipo seleccionado
+      switch (tipoTransaccion) {
+          case 1:
+              tuCarroUQ.realizarAlquiler(vehículoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
+              break;
+          case 2:
+              tuCarroUQ.realizarVenta(vehículoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
+              break;
+          case 3:
+              tuCarroUQ.realizarCompra(vehículoSeleccionado, clienteSeleccionado, empleadoSeleccionado);
+              break;
+          default:
+              System.out.println("Tipo de transacción no válido.");
+              return;
+      }
 
-    // Mostrar resumen de la transacción
-    System.out.println("\nTransacción realizada con éxito:");
-    System.out.println("Tipo de transacción: " + (tipoTransaccion == 1 ? "Alquiler" : tipoTransaccion == 2 ? "Venta" : "Compra"));
-    System.out.println("Empleado: " + empleadoSeleccionado.getNombre());
-    System.out.println("Cliente: " + clienteSeleccionado.getNombre());
-    System.out.println("Vehículo: " + vehiculoSeleccionado.toString());
-    System.out.println("Fecha de la transacción: " + LocalDate.now());
-}
+      // Mostrar resumen de la transacción
+      System.out.println("\nTransacción realizada con éxito:");
+      System.out.println("Tipo de transacción: " + (tipoTransaccion == 1 ? "Alquiler" : tipoTransaccion == 2 ? "Venta" : "Compra"));
+      System.out.println("Empleado: " + empleadoSeleccionado.getNombre());
+      System.out.println("Cliente: " + clienteSeleccionado.getNombre());
+      System.out.println("Vehículo: " + vehículoSeleccionado.toString());
+      System.out.println("Fecha de la transacción: " + LocalDate.now());
+   }
 
    protected static Cliente seleccionarCliente(Scanner scanner, TuCarroUQ tuCarroUQ) {
       List<Cliente> clientesDisponibles=tuCarroUQ.getClientes(); 
@@ -338,28 +298,110 @@ public class App {
    }
 
    protected static Empleado seleccionarEmpleado(Administrador administrador) {
-      List<Empleado> empleados=administrador.getEmpleados();
+     List<Empleado> empleados=administrador.getEmpleados();
 
-      if (empleados.isEmpty()) {
-          System.out.println("No hay empleados disponibles.");
-          return null; 
-      }
+     if (empleados.isEmpty()) {
+         System.out.println("No hay empleados disponibles.");
+         return null; 
+     }
 
-      System.out.println("\nSeleccione un empleado:");
+     Scanner scanner=new Scanner(System.in);
 
-      for (int i=0; i<empleados.size(); i++) {
-          System.out.println((i + 1)+". "+empleados.get(i).getNombre());
-      }
+     for (int i=0; i<empleados.size(); i++) {
+         System.out.println((i + 1)+". "+empleados.get(i).getNombre());
+     }
 
-      Scanner scanner=new Scanner(System.in);
+     int seleccion=scanner.nextInt()-1; 
 
-      int seleccion=scanner.nextInt()-1; 
+     if (seleccion>=0 && seleccion<empleados.size()) {
+         return empleados.get(seleccion);
+     } else {
+         System.out.println("Selección no válida.");
+         return null; 
+     }
+   }
 
-      if (seleccion>=0 && seleccion<empleados.size()) {
-          return empleados.get(seleccion);
-      } else {
-          System.out.println("Selección no válida.");
-          return null; 
-        }
-    }
+   private static void registrarEmpleados(Administrador administrador) {
+    Empleado empleado1 = new Empleado();
+    empleado1.setNombre("Moises Vargas");
+    empleado1.setCorreo("moiso@ejemplo.com");
+    empleado1.setContrasena("12345");
+
+    Empleado empleado2 = new Empleado();
+    empleado2.setNombre("Jeison Lopez");
+    empleado2.setCorreo("jeison@ejemplo.com");
+    empleado2.setContrasena("12345");
+
+    Empleado empleado3 = new Empleado();
+    empleado3.setNombre("Pepito Perez");
+    empleado3.setCorreo("pepito@ejemplo.com");
+    empleado3.setContrasena("12345");
+
+    // Agregar empleados al administrador
+    administrador.gestionarEmpleado(empleado1);
+    administrador.gestionarEmpleado(empleado2);
+    administrador.gestionarEmpleado(empleado3);
+}
+
+private static void registrarClientes(TuCarroUQ tuCarroUQ) {
+    Cliente cliente1 = new Cliente();
+    cliente1.setNombre("Juan Perez");
+    cliente1.setDocumento("123456789");
+    cliente1.setTelefono("555-1234");
+    cliente1.setDireccion("Calle Falsa 123");
+
+    Cliente cliente2 = new Cliente();
+    cliente2.setNombre("Carlos Trujillo");
+    cliente2.setDocumento("56789");
+    cliente2.setTelefono("3104443442");
+    cliente2.setDireccion("Calle 45a # 2021");
+
+    Cliente cliente3 = new Cliente();
+    cliente3.setNombre("Mariana Yepes");
+    cliente3.setDocumento("987654321");
+    cliente3.setTelefono("1234-555");
+    cliente3.setDireccion("Avenida Siempre Viva");
+
+    tuCarroUQ.registrarCliente(cliente1);
+    tuCarroUQ.registrarCliente(cliente2);
+    tuCarroUQ.registrarCliente(cliente3);
+}
+
+// Registro de vehículos 
+private static void registrarVehiculos(TuCarroUQ tuCarroUQ) {
+    Vehiculo vehiculo1 = new Sedan();
+    vehiculo1.marca = "Toyota";
+    vehiculo1.modelo = "Corolla";
+    vehiculo1.cilindraje = "1600 cc";
+    vehiculo1.cambios = "5";
+    vehiculo1.velocidadMaxima = "170 km/h";
+    vehiculo1.nuevo ="si";
+    vehiculo1.tipoTransmision = "Automatica";
+    vehiculo1.tipoCombustible = "Gasolina";
+
+    Vehiculo vehiculo2 = new Moto();
+    vehiculo2.marca = "Yamaha";
+    vehiculo2.modelo= "YZF-1";
+    vehiculo2.cilindraje = "1000 cc";
+    vehiculo2.cambios ="6";
+    vehiculo2.velocidadMaxima = "256 km/h";
+    vehiculo2.nuevo = "usado";
+    vehiculo2.tipoTransmision = "mecánica";
+    vehiculo2.tipoCombustible = "gasolina";
+
+    Vehiculo vehiculo3 = new Deportivo();
+    vehiculo3.marca = "Lamborghini";
+    vehiculo3.modelo= "Egoista";
+    vehiculo3.cilindraje = "5200 cc";
+    vehiculo3.cambios ="6";
+    vehiculo3.velocidadMaxima = "350 km/h";
+    vehiculo3.nuevo = "usado";
+    vehiculo3.tipoTransmision = "automatica";
+    vehiculo3.tipoCombustible = "gasolina alto";
+
+    // Registrar vehículos en TuCarroUQ
+    tuCarroUQ.registrarVehiculo(vehiculo1);
+    tuCarroUQ.registrarVehiculo(vehiculo2);
+    tuCarroUQ.registrarVehiculo(vehiculo3);
+}
 }
