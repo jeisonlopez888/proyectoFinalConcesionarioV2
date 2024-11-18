@@ -1,11 +1,25 @@
 package co.edu.uniquindio.poo;
 
 
+/**
+ * Clase abstracta que representa a un Usuario.
+ * Implementa la interfaz ICredenciales.
+ */
 public abstract class Usuario implements ICredenciales {
-    protected String nombre;
-    protected String correo;
-    protected String contrasena;
+    // Atributos de la clase
+    private String nombre;      // Se recomienda usar modificadores de acceso
+    private String correo;
+    private String contrasena;
 
+
+    // Constructor con parámetros
+    public Usuario(String nombre, String correo, String contrasena) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasena = contrasena;
+    }
+
+    // Métodos getter y setter
     public String getNombre() {
         return nombre;
     }
@@ -30,6 +44,10 @@ public abstract class Usuario implements ICredenciales {
         this.contrasena = contrasena;
     }
 
-    // Método abstracto para recuperar contraseña
+    /**
+     * Método abstracto para recuperar contraseña.
+     * @param respuesta La respuesta a la pregunta de seguridad.
+     * @return true si la recuperación es exitosa, false en caso contrario.
+     */
     public abstract boolean recuperarContrasena(String respuesta);
 }
