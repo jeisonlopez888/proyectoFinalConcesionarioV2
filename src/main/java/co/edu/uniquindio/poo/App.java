@@ -151,7 +151,9 @@ public class App {
         nuevoVehiculo.velocidadMaxima = scanner.nextLine();
 
         System.out.print("\n¿Es nuevo o usado? (nuevo/usado): ");
-        nuevoVehiculo.nuevo = scanner.nextLine();
+        String respuesta = scanner.nextLine().trim().toLowerCase();
+        nuevoVehiculo.nuevo = respuesta.equals("nuevo"); // Asignar true o false
+
 
         System.out.print("\nIngrese el tipo de transmisión: ");
         nuevoVehiculo.tipoTransmision = scanner.nextLine();
@@ -208,7 +210,7 @@ public class App {
        }
 
        // Mostrar vehiculos disponibles
-       System.out.println("\nVehiculos disponibles:");
+       System.out.println("\nseleccione uno de los Vehiculos disponibles:");
        for (int i = 0; i < vehiculosDisponibles.size(); i++) {
            Vehiculo v = vehiculosDisponibles.get(i);
            System.out.println((i + 1) + ". " + v.toString() );
@@ -376,7 +378,7 @@ public class App {
         vehiculo1.cilindraje = "1600 cc";
         vehiculo1.cambios = "5";
         vehiculo1.velocidadMaxima = "170 km/h";
-        vehiculo1.nuevo = "si";
+        vehiculo1.nuevo = true;
         vehiculo1.tipoTransmision = "Automatica";
         vehiculo1.tipoCombustible = "Gasolina";
 
@@ -386,7 +388,7 @@ public class App {
         vehiculo2.cilindraje = "1000 cc";
         vehiculo2.cambios = "6";
         vehiculo2.velocidadMaxima = "256 km/h";
-        vehiculo2.nuevo = "usado";
+        vehiculo2.nuevo = true;
         vehiculo2.tipoTransmision = "mecánica";
         vehiculo2.tipoCombustible = "gasolina";
 
@@ -396,7 +398,7 @@ public class App {
         vehiculo3.cilindraje = "5200 cc";
         vehiculo3.cambios = "6";
         vehiculo3.velocidadMaxima = "350 km/h";
-        vehiculo3.nuevo = "usado";
+        vehiculo3.nuevo = true;
         vehiculo3.tipoTransmision = "automatica";
         vehiculo3.tipoCombustible = "gasolina alto";
 
@@ -406,7 +408,7 @@ public class App {
         vehiculo4.cilindraje = "2500 cc";
         vehiculo4.cambios = "6";
         vehiculo4.velocidadMaxima = "210 km/h";
-        vehiculo4.nuevo = "usado";
+        vehiculo4.nuevo = true;
         vehiculo4.tipoTransmision = "automatica";
         vehiculo4.tipoCombustible = "gasolina";
 
@@ -416,7 +418,7 @@ public class App {
         vehiculo5.cilindraje = "2400 cc";
         vehiculo5.cambios = "6";
         vehiculo5.velocidadMaxima = "180 km/h";
-        vehiculo5.nuevo = "nuevo";
+        vehiculo5.nuevo =true;
         vehiculo5.tipoTransmision = "mecánica";
         vehiculo5.tipoCombustible = "diesel";
 
@@ -426,7 +428,7 @@ public class App {
         vehiculo6.cilindraje = "2750 cc";
         vehiculo6.cambios = "6";
         vehiculo6.velocidadMaxima = "190 km/h";
-        vehiculo6.nuevo = "usado";
+        vehiculo6.nuevo = true;
         vehiculo6.tipoTransmision = "automatica";
         vehiculo6.tipoCombustible = "gasolina ";
 
@@ -436,7 +438,7 @@ public class App {
         vehiculo7.cilindraje = "2950 cc";
         vehiculo7.cambios = "6";
         vehiculo7.velocidadMaxima = "110 km/h";
-        vehiculo7.nuevo = "nuevo";
+        vehiculo7.nuevo = true;
         vehiculo7.tipoTransmision = "automatica";
         vehiculo7.tipoCombustible = "gasolina ";
 
@@ -446,7 +448,7 @@ public class App {
         vehiculo8.cilindraje = "12880";
         vehiculo8.cambios = "12";
         vehiculo8.velocidadMaxima = "90 km/h";
-        vehiculo8.nuevo = "nuevo";
+        vehiculo8.nuevo = true;
         vehiculo8.tipoTransmision = "automatica";
         vehiculo8.tipoCombustible = "gasolina alto";
 
@@ -456,7 +458,7 @@ public class App {
         vehiculo9.cilindraje = " no por que no es de motor a combustion";
         vehiculo9.cambios = "1";
         vehiculo9.velocidadMaxima = "225 km/h";
-        vehiculo9.nuevo = "nuevo";
+        vehiculo9.nuevo = true;
         vehiculo9.tipoTransmision = "automatica";
         vehiculo9.tipoCombustible = "electrico 100%";
 
@@ -466,7 +468,7 @@ public class App {
         vehiculo10.cilindraje = " 1.8 L";
         vehiculo10.cambios = " 1";
         vehiculo10.velocidadMaxima = " 180 km/h";
-        vehiculo10.nuevo = " Usado";
+        vehiculo10.nuevo = true;
         vehiculo10.tipoTransmision = " automatica";
         vehiculo10.tipoCombustible = " Hibrido (gasolina y electrico)";
 

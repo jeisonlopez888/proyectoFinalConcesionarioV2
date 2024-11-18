@@ -7,7 +7,7 @@ package co.edu.uniquindio.poo;
 public abstract class Vehiculo {
 
     protected String marca;          // Cambiado a protected para permitir acceso en subclases
-    protected String nuevo;         // Cambiado a booleano para representar verdadero/falso
+    protected Boolean nuevo;         // Cambiado a booleano para representar verdadero/falso
     protected String modelo;
     protected String cambios; 
     protected String velocidadMaxima; 
@@ -16,11 +16,12 @@ public abstract class Vehiculo {
     protected String tipoCombustible;
  
     // Constructor opcional si se desea inicializar atributos al crear una instancia
+    
  
     @Override
     public String toString() { 
        return "\n Marca: '" + marca +
-              "', \n Nuevo: " + nuevo +
+              "', \n Nuevo: " + true +
               ", \n Modelo: '" + modelo +
               "', \n Cambios: '" + cambios +
               "', \n Velocidad Máxima: '" + velocidadMaxima +
